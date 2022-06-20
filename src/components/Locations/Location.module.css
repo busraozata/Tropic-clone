@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,700&display=swap");
+:root {
+  --lato: "Lato", sans-serif;
+  --light: #dbe6ed;
+  --light2: #efe9e6;
+  --lightLine: #dbe6ed;
+  --dark: #0f1515;
+  --dark2: #08332f;
+  --darkLine: #055449;
+  --aqua: #229b91;
+  --white: #fff;
+  --black: #030502;
+  --letterSpacing: 0.4px;
+  --borderRadius: 12px;
+  --headerHeight: 90px;
+  --spacing-sm: 12px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 64px;
+  --boxShadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 2px 2px rgba(0, 0, 0, 0.2), 0 4px 4px rgba(0, 0, 0, 0.15),
+        0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.05);
+}
+
+.locationArea {
+  background-color: var(--light) !important;
+}
+
+.locationArea .locations {
+  width: 100%;
+  padding: 100px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.locationArea .locations.page {
+  padding-top: calc(100px + var(--headerHeight));
+}
+
+.locationArea .locations__content {
+  margin: 0 1.5rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.locationArea .locations__content__title {
+  color: var(--white);
+  font-size: 2rem;
+  letter-spacing: var(--letterSpacing);
+  font-weight: 900;
+  position: relative;
+  margin-bottom: var(--spacing-xl);
+  display: inline-block;
+}
+
+.locationArea .locations__content__title::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  top: 1.5rem;
+  bottom: 0;
+  right: 0;
+  width: calc(100% - 17.8rem);
+  height: 2px;
+  background: var(--white);
+}
+
+.locationArea .locations__content__gallery {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-auto-rows: 275px;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+@media (min-width: 37.5em) {
+  .locationArea .locations__content__gallery {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 250px;
+  }
+}
+
+@media (min-width: 64em) {
+  .locationArea .locations__content__gallery {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.locationArea .locations__content__gallery .gallery__item {
+  cursor: pointer;
+  position: relative;
+  border-radius: var(--borderRadius);
+  border: 2px solid var(--white);
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
+  -webkit-box-shadow: var(--boxShadow);
+          box-shadow: var(--boxShadow);
+}
+
+.locationArea .locations__content__gallery .gallery__item:hover {
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 1px 1px rgba(0, 0, 0, 0.2), 0 3px 3px rgba(0, 0, 0, 0.15), 0 6px 6px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 1px 1px rgba(0, 0, 0, 0.2), 0 3px 3px rgba(0, 0, 0, 0.15), 0 6px 6px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.05);
+}
+
+.locationArea .locations__content__gallery .gallery__item:hover .overlay {
+  background: transparent;
+}
+
+.locationArea .locations__content__gallery .gallery__item__img {
+  border-top-left-radius: var(--borderRadius);
+  border-top-right-radius: var(--borderRadius);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.locationArea .locations__content__gallery .gallery__item .overlay {
+  border-top-left-radius: var(--borderRadius);
+  border-top-right-radius: var(--borderRadius);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75%;
+  background: rgba(15, 21, 21, 0.4);
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
+}
+
+.locationArea .locations__content__gallery .gallery__item__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 25%;
+  background: var(--white);
+  border-bottom-left-radius: var(--borderRadius);
+  border-bottom-right-radius: var(--borderRadius);
+}
+
+.locationArea .locations__content__gallery .gallery__item__content svg {
+  color: var(--aqua);
+  font-size: 1.1rem;
+}
+
+.locationArea .locations__content__gallery .gallery__item__content__location {
+  margin-left: 6px;
+  font-size: 1.2rem;
+  color: var(--dark);
+  letter-spacing: var(--letterSpacing);
+  margin-bottom: 0rem !important;
+}
+
+.locationArea .locations__content__gallery .gallery__item__tag {
+  position: absolute;
+  background: var(--white);
+  top: -12px;
+  left: var(--spacing-sm);
+  padding: 6px 8px;
+  border-radius: var(--borderRadius);
+  font-size: 0.8rem;
+  letter-spacing: var(--letterSpacing);
+}
+
+.locationArea .locations__content__viewmore {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.locationArea .locations__content__viewmore a {
+  letter-spacing: var(--letterSpacing);
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-decoration: none;
+  border-radius: var(--borderRadius);
+  color: var(--dark);
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.1rem;
+}
+
+.locationArea .locations__content__viewmore a svg {
+  font-size: 1.2rem;
+  margin-left: var(--spacing-sm);
+  padding-top: 2px;
+}
+
+.locationArea .locations__content__viewmore a:hover {
+  background: rgba(15, 21, 21, 0.05);
+}
+/*# sourceMappingURL=Location.module.css.map */

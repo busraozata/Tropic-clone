@@ -1,0 +1,166 @@
+@import "./../../styles/variables.scss";
+
+.locationArea {
+    background-color: var(--light) !important;
+    .locations {
+        width: 100%;
+        padding: 100px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &.page {
+            padding-top: calc(100px + #{var(--headerHeight)});
+        }
+
+        &__content {
+            margin: 0 1.5rem;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            &__title {
+                color: var(--white);
+                font-size: 2rem;
+                letter-spacing: var(--letterSpacing);
+                font-weight: 900;
+                position: relative;
+                margin-bottom: var(--spacing-xl);
+                display: inline-block;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    height: 100%;
+                    top: 1.5rem;
+                    bottom: 0;
+                    right: 0;
+                    width: calc(100% - 17.8rem);
+                    height: 2px;
+                    background: var(--white);
+                }
+            }
+
+            &__gallery {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-auto-rows: 275px;
+                gap: var(--spacing-md);
+                margin-bottom: var(--spacing-xl);
+
+                @include breakpoint(sm) {
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-auto-rows: 250px;
+                }
+
+                @include breakpoint(lg) {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+
+                .gallery__item {
+                    cursor: pointer;
+                    position: relative;
+                    border-radius: var(--borderRadius);
+                    border: 2px solid var(--white);
+                    transition: 0.3s ease all;
+                    box-shadow: var(--boxShadow);
+
+                    &:hover {
+                        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 1px 1px rgba(0, 0, 0, 0.2),
+                            0 3px 3px rgba(0, 0, 0, 0.15), 0 6px 6px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.05);
+
+                        .overlay {
+                            background: transparent;
+                        }
+                    }
+
+                    &__img {
+                        border-top-left-radius: var(--borderRadius);
+                        border-top-right-radius: var(--borderRadius);
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 75%;
+                        object-fit: cover;
+                    }
+                    .overlay {
+                        border-top-left-radius: var(--borderRadius);
+                        border-top-right-radius: var(--borderRadius);
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 75%;
+                        background: rgba(#0f1515, 0.4);
+                        transition: 0.3s ease all;
+                    }
+                    &__content {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 25%;
+                        background: var(--white);
+                        border-bottom-left-radius: var(--borderRadius);
+                        border-bottom-right-radius: var(--borderRadius);
+
+                        svg {
+                            color: var(--aqua);
+                            font-size: 1.1rem;
+                        }
+
+                        &__location {
+                            margin-left: 6px;
+                            font-size: 1.2rem;
+                            color: var(--dark);
+                            letter-spacing: var(--letterSpacing);
+                            margin-bottom: 0rem !important;
+                        }
+                    }
+
+                    &__tag {
+                        position: absolute;
+                        background: var(--white);
+                        top: -12px;
+                        left: var(--spacing-sm);
+                        padding: 6px 8px;
+                        border-radius: var(--borderRadius);
+                        font-size: 0.8rem;
+                        letter-spacing: var(--letterSpacing);
+                    }
+                }
+            }
+
+            &__viewmore {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                a {
+                    letter-spacing: var(--letterSpacing);
+                    padding: var(--spacing-sm) var(--spacing-md);
+                    text-decoration: none;
+                    border-radius: var(--borderRadius);
+                    color: var(--dark);
+                    transition: 0.3s ease all;
+                    display: flex;
+                    align-items: center;
+                    font-size: 1.1rem;
+
+                    svg {
+                        font-size: 1.2rem;
+                        margin-left: var(--spacing-sm);
+                        padding-top: 2px;
+                    }
+
+                    &:hover {
+                        background: rgba(#0f1515, 0.05);
+                    }
+                }
+            }
+        }
+    }
+}

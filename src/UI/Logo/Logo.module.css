@@ -1,0 +1,14 @@
+@import url(./../../styles/variables.scss);
+.logo {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.logo span {
+  font-size: 2rem;
+  color: var(--white);
+  font-weight: 900;
+  letter-spacing: var(--letterSpacing);
+  margin-left: var(--spacing-sm);
+}
+/*# sourceMappingURL=Logo.module.css.map */

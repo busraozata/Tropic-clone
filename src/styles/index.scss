@@ -1,0 +1,17 @@
+@import url(./reset.scss);
+@import url(./variables.scss);
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    font-family: var(--lato);
+}
+
+#root {
+    height: 100%;
+}
